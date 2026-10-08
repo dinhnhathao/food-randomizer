@@ -1,0 +1,458 @@
+ /* ==================================================
+    HOME SCREEN
+ ================================================== */
+
+
+ /* ==================================================
+    HOME / HEADER LAYER
+ ================================================== */
+
+ .home-header {
+     width: 100%;
+     height: 128px;
+
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+
+     padding-top: 80px;
+ }
+
+
+ /* ==============================
+    HEADER TITLE
+ ============================== */
+
+ .home-title {
+     font-size: var(--font-large);
+     font-weight: 700;
+
+     line-height: 1.2;
+
+     text-align: center;
+ }
+
+
+ /* ==============================
+    HEADER SUBTITLE
+ ============================== */
+
+ .home-subtitle {
+     margin-top: 10px;
+
+     font-size: var(--font-small);
+     font-weight: 400;
+
+     line-height: 1.4;
+
+     text-align: center;
+ }
+
+
+ /* ==================================================
+    HOME / RESULT PREVIEW LAYER
+ ================================================== */
+
+ .home-result-preview {
+     width: var(--result-card-width);
+     height: var(--result-card-height);
+
+     margin: 60px auto 0;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     border: 2px solid #000000;
+     border-radius: var(--border-radius);
+
+     background: #dcdde4;
+ }
+
+
+ /* ==================================================
+    HOME / RESULT PLACEHOLDER
+ ================================================== */
+
+ /* ==================================================
+   HOME / QUESTION MARKS
+================================================== */
+
+.home-result-placeholder {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* ==============================
+   QUESTION MARK
+============================== */
+
+.question-mark {
+    position: absolute;
+
+    color: #000000;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    user-select: none;
+    pointer-events: none;
+
+    animation: questionFloat 12s ease-in-out infinite alternate;
+}
+
+
+/* ==============================
+   VỊ TRÍ & CHUYỂN ĐỘNG
+============================== */
+
+.question-mark:nth-child(1) {
+    left: 8%;
+    top: 12%;
+    animation-delay: -1s;
+}
+
+.question-mark:nth-child(2) {
+    left: 25%;
+    top: 8%;
+    animation-delay: -4s;
+}
+
+.question-mark:nth-child(3) {
+    left: 45%;
+    top: 15%;
+    animation-delay: -7s;
+}
+
+.question-mark:nth-child(4) {
+    left: 68%;
+    top: 10%;
+    animation-delay: -2s;
+}
+
+.question-mark:nth-child(5) {
+    left: 84%;
+    top: 22%;
+    animation-delay: -9s;
+}
+
+.question-mark:nth-child(6) {
+    left: 15%;
+    top: 32%;
+    animation-delay: -5s;
+}
+
+.question-mark:nth-child(7) {
+    left: 35%;
+    top: 38%;
+    animation-delay: -10s;
+}
+
+.question-mark:nth-child(8) {
+    left: 57%;
+    top: 30%;
+    animation-delay: -3s;
+}
+
+.question-mark:nth-child(9) {
+    left: 76%;
+    top: 42%;
+    animation-delay: -8s;
+}
+
+.question-mark:nth-child(10) {
+    left: 90%;
+    top: 52%;
+    animation-delay: -6s;
+}
+
+.question-mark:nth-child(11) {
+    left: 5%;
+    top: 55%;
+    animation-delay: -11s;
+}
+
+.question-mark:nth-child(12) {
+    left: 22%;
+    top: 62%;
+    animation-delay: -4s;
+}
+
+.question-mark:nth-child(13) {
+    left: 42%;
+    top: 58%;
+    animation-delay: -7s;
+}
+
+.question-mark:nth-child(14) {
+    left: 64%;
+    top: 68%;
+    animation-delay: -2s;
+}
+
+.question-mark:nth-child(15) {
+    left: 82%;
+    top: 64%;
+    animation-delay: -9s;
+}
+
+.question-mark:nth-child(16) {
+    left: 12%;
+    top: 80%;
+    animation-delay: -5s;
+}
+
+.question-mark:nth-child(17) {
+    left: 32%;
+    top: 76%;
+    animation-delay: -10s;
+}
+
+.question-mark:nth-child(18) {
+    left: 52%;
+    top: 84%;
+    animation-delay: -3s;
+}
+
+.question-mark:nth-child(19) {
+    left: 70%;
+    top: 80%;
+    animation-delay: -8s;
+}
+
+.question-mark:nth-child(20) {
+    left: 88%;
+    top: 86%;
+    animation-delay: -6s;
+}
+
+
+/* ==============================
+   FLOATING MOTION
+============================== */
+
+@keyframes questionFloat {
+
+    0% {
+        transform: translate(0, 0) rotate(-8deg);
+    }
+
+    25% {
+        transform: translate(8px, -10px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(-6px, 8px) rotate(-4deg);
+    }
+
+    75% {
+        transform: translate(10px, 4px) rotate(7deg);
+    }
+
+    100% {
+        transform: translate(-8px, -6px) rotate(-6deg);
+    }
+
+}
+
+
+ /* ==================================================
+    HOME / ACTION LAYER
+ ================================================== */
+
+ .home-actions {
+     width: 100%;
+
+     margin-top: 60px;
+
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+
+     gap: 20px;
+     position: relative;
+      z-index: 10;
+ }
+
+
+ /* ==================================================
+    HOME / MAIN BUTTON
+ ================================================== */
+
+ .main-button {
+    width: var(--main-button-width);
+    height: var(--main-button-height);
+
+    border: 2px solid #000000;
+    border-radius: var(--border-radius);
+
+    background: #d84559;
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: var(--font-large);
+    font-weight: 600;
+
+    transition: transform var(--transition-fast);
+}
+
+
+ /* ==================================================
+    BUTTON / HOVER
+ ================================================== */
+
+ .main-button:hover {
+     transform: scale(1.03);
+ }
+
+
+ /* ==================================================
+    BUTTON / ACTIVE
+ ================================================== */
+
+ .main-button:active {
+     transform: scale(0.97);
+ }
+
+ /* ==================================================
+   HOME / DECORATIVE BACKGROUND IMAGE
+================================================== */
+
+/* ==================================================
+   HOME / DECORATIVE BACKGROUND IMAGES
+================================================== */
+
+.home-background-image {
+    width: 100%;
+    flex: 1;
+    position: relative;
+    overflow: visible;
+}
+
+
+/* ==================================================
+   BG1_1 / CON ĐƯỜNG
+================================================== */
+
+.home-background-road {
+    position: absolute;
+
+    width: 670px; /* ← TỰ CHỈNH CHIỀU RỘNG */
+    max-width: none;
+    height: auto;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    bottom: 0px; /* ← TỰ CHỈNH VỊ TRÍ DỌC */
+
+    display: block;
+
+    z-index: 1;
+}
+
+
+/* ==================================================
+   BG1 / HAI NGƯỜI CHẠY XE
+================================================== */
+
+.home-background-people {
+    position: absolute;
+
+    width: 250px;
+    height: auto;
+
+    left: calc(50% + var(--bg1-offset-x));
+    bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+
+    animation: backgroundImageSwing 3s ease-in-out infinite alternate;
+    z-index: 2;
+}
+
+.home-background-people img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes backgroundImageSwing {
+    from {
+        transform: rotate(-5deg);
+    }
+
+    to {
+        transform: rotate(5deg);
+    }
+}
+
+/* ==============================
+   SWING ANIMATION
+============================== */
+
+@keyframes backgroundImageSwing {
+
+    from {
+        transform: rotate(-5deg);
+    }
+
+    to {
+        transform: rotate(5deg);
+    }
+
+}
+
+/* ==================================================
+   HOME / FAST QUESTION MARKS
+================================================== */
+
+/* ==================================================
+   HOME / FAST QUESTION MARKS
+================================================== */
+
+.home-result-placeholder.fast-spin .question-mark {
+    animation-name: questionFloatFast;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes questionFloatFast {
+    0% {
+        transform: translate(0, 0) rotate(-8deg);
+    }
+
+    25% {
+        transform: translate(8px, -10px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(-6px, 8px) rotate(-4deg);
+    }
+
+    75% {
+        transform: translate(10px, 4px) rotate(7deg);
+    }
+
+    100% {
+        transform: translate(-8px, -6px) rotate(-6deg);
+    }
+}
+
+/* ==================================================
+   HOME / BUTTON LOCK WHILE SPINNING
+================================================== */
+
+.main-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}

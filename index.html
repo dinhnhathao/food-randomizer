@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Ăn Gì Đây?</title>
+
+
+    <!-- ==================================================
+         CSS
+    ================================================== -->
+
+    <!-- Reset -->
+    <link
+        rel="stylesheet"
+        href="css/reset.css"
+    >
+
+    <!-- Global Variables -->
+    <link
+        rel="stylesheet"
+        href="css/variables.css"
+    >
+
+    <!-- Global Layout -->
+    <link
+        rel="stylesheet"
+        href="css/layout.css"
+    >
+
+    <!-- HOME -->
+    <link
+        rel="stylesheet"
+        href="css/home.css"
+    >
+
+    <!-- RESULT -->
+    <link
+        rel="stylesheet"
+        href="css/result.css"
+    >
+    
+    <!-- Filter -->
+    <link
+        rel="stylesheet"
+        href="css/filter.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         APP
+         Container chính của toàn bộ website
+    ================================================== -->
+
+    <div id="app">
+
+
+        <!-- ==================================================
+             SCREEN 1
+             HOME
+        ================================================== -->
+
+        <main
+            id="screen-home"
+            class="screen screen-home"
+        >
+
+
+            <!-- ==================================================
+                 HOME / HEADER
+            ================================================== -->
+
+            <header class="home-header">
+
+                <h1
+                    id="home-title"
+                    class="home-title"
+                >
+                    Ăn gì đây?
+                </h1>
+
+
+                <p
+                    id="home-subtitle"
+                    class="home-subtitle"
+                >
+                    Để tui chọn cho!
+                </p>
+
+            </header>
+
+
+            <!-- ==================================================
+                 HOME / RESULT PREVIEW
+            ================================================== -->
+
+            <section
+                id="home-result-preview"
+                class="home-result-preview"
+            >
+
+                <div
+                    id="home-result-placeholder"
+                    class="home-result-placeholder"
+                >
+
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+                    <span class="question-mark">?</span>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================================
+                 HOME / ACTIONS
+            ================================================== -->
+
+            <section
+                id="home-actions"
+                class="home-actions"
+            >
+
+                <!-- QUAY NGAY -->
+
+                <button
+                    id="btn-spin"
+                    class="main-button button-spin"
+                    type="button"
+                >
+                    Quay ngay
+                </button>
+
+
+                <!-- KÉN ĂN -->
+
+                <button
+                    id="btn-filter"
+                    class="main-button button-filter"
+                    type="button"
+                >
+                    Kén ăn
+                </button>
+
+            </section>
+            <!-- ==================================================
+                HOME / DECORATIVE BACKGROUND IMAGES
+            ================================================== -->
+
+            <div class="home-background-image">
+
+                <img
+                    class="home-background-road"
+                    src="assets/background/background-1_1.png"
+                    alt=""
+                >
+
+                <div class="home-background-people">
+                    
+                <img
+                    src="assets/background/background-1.png"
+                    alt=""
+                >
+            </div>
+
+            </div>
+
+        </main>
+
+
+
+        <!-- ==================================================
+             SCREEN 1.1
+             RESULT
+
+             Ban đầu ẩn.
+             JavaScript sẽ hiển thị khi bấm "Quay ngay".
+        ================================================== -->
+
+        <main
+            id="screen-result"
+            class="screen screen-result hidden"
+        >
+
+
+            <!-- ==================================================
+                 RESULT / HEADER
+            ================================================== -->
+
+            <header class="result-header">
+
+                <h1
+                    id="result-title"
+                    class="result-title"
+                >
+                    Hôm nay nhét vào mồm món
+                </h1>
+
+            </header>
+
+
+
+            <!-- ==================================================
+                 RESULT / FOOD CARD
+            ================================================== -->
+
+            <section
+                id="result-food-card"
+                class="result-food-card"
+            >
+
+
+                <!-- FOOD IMAGE -->
+
+                <div
+                    id="result-food-image-container"
+                    class="result-food-image-container"
+                >
+
+                    <img
+                        id="result-food-image"
+                        class="result-food-image"
+                        src=""
+                        alt="Món ăn"
+                    >
+
+                </div>
+
+
+                <!-- FOOD NAME -->
+
+                <div
+                    id="result-food-name-container"
+                    class="result-food-name-container"
+                >
+
+                    <h2
+                        id="result-food-name"
+                        class="result-food-name"
+                    >
+                        Tên món ăn
+                    </h2>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 RESULT / ACTIONS
+            ================================================== -->
+
+            <section
+                id="result-actions"
+                class="result-actions"
+            >
+
+
+                <!-- TUI ĐỔI Ý -->
+
+                <button
+                    id="btn-change-food"
+                    class="main-button result-button button-change-food"
+                    type="button"
+                >
+                    Tui đổi ý
+                </button>
+
+
+                <!-- VỀ LẠI -->
+
+                <button
+                    id="btn-back-home"
+                    class="main-button result-button button-back-home"
+                    type="button"
+                >
+                    Về lại
+                </button>
+
+
+            </section>
+            
+            <!-- ==================================================
+                RESULT / BACKGROUND IMAGE
+            ================================================== -->
+
+            <div class="result-background-image">
+                <img
+                    src="assets/background/background-2.png"
+                    alt=""
+                >
+            </div>
+
+                </main>
+
+
+        <!-- ==================================================
+            FILTER OVERLAY
+        ================================================== -->
+
+        <div
+            id="filter-overlay"
+            class="filter-overlay hidden"
+        >
+
+            <div class="filter-panel">
+
+                <div class="filter-title">
+                    Kén ăn
+                </div>
+
+
+                <div class="filter-list">
+
+                    <!-- ==================================================
+                        BÌNH THƯỜNG / HẸN HÒ
+                    ================================================== -->
+
+                    <div
+                        class="filter-item"
+                        data-filter="type"
+                    >
+
+                        <button
+                            class="filter-select-button"
+                            type="button"
+                        >
+                            Bình thường / Hẹn hò
+                        </button>
+
+                        <div class="filter-dropdown hidden">
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="all"
+                            >
+                                Bình thường / Hẹn hò
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="bình thường"
+                            >
+                                Bình thường
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="hẹn hò"
+                            >
+                                Hẹn hò
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                        KHÔ / NƯỚC
+                    ================================================== -->
+
+                    <div
+                        class="filter-item"
+                        data-filter="texture"
+                    >
+
+                        <button
+                            class="filter-select-button"
+                            type="button"
+                        >
+                            Khô / Nước
+                        </button>
+
+                        <div class="filter-dropdown hidden">
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="all"
+                            >
+                                Khô / Nước
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="khô"
+                            >
+                                Khô
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="nước"
+                            >
+                                Nước
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                        MẶN / CHAY
+                    ================================================== -->
+
+                    <div
+                        class="filter-item"
+                        data-filter="taste"
+                    >
+
+                        <button
+                            class="filter-select-button"
+                            type="button"
+                        >
+                            Mặn / Chay
+                        </button>
+
+                        <div class="filter-dropdown hidden">
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="all"
+                            >
+                                Mặn / Chay
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="mặn"
+                            >
+                                Mặn
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="chay"
+                            >
+                                Chay
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                        ĂN VẶT / ĂN NO
+                    ================================================== -->
+
+                    <div
+                        class="filter-item"
+                        data-filter="meal"
+                    >
+
+                        <button
+                            class="filter-select-button"
+                            type="button"
+                        >
+                            Ăn vặt / Ăn no
+                        </button>
+
+                        <div class="filter-dropdown hidden">
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="all"
+                            >
+                                Ăn vặt / Ăn no
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="ăn vặt"
+                            >
+                                Ăn vặt
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="ăn no"
+                            >
+                                Ăn no
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                        QUỐC GIA
+                    ================================================== -->
+
+                    <div
+                        class="filter-item"
+                        data-filter="country"
+                    >
+
+                        <button
+                            class="filter-select-button"
+                            type="button"
+                        >
+                            Quốc gia
+                        </button>
+
+                        <div class="filter-dropdown hidden">
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="all"
+                            >
+                                Quốc gia
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="Việt Nam"
+                            >
+                                Việt Nam
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="Ý"
+                            >
+                                Ý
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="Nhật Bản"
+                            >
+                                Nhật Bản
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="Hàn Quốc"
+                            >
+                                Hàn Quốc
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="Thái Lan"
+                            >
+                                Thái Lan
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="Ấn Độ"
+                            >
+                                Ấn Độ
+                            </button>
+
+                            <button
+                                class="filter-option"
+                                type="button"
+                                data-value="Mỹ"
+                            >
+                                Mỹ
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     OK BUTTON
+                ================================================== -->
+
+                <button
+                    id="filter-ok"
+                    class="filter-ok-button"
+                    type="button"
+                >
+                    OK
+                </button>
+
+            </div>
+
+        </div>
+        <!-- ==================================================
+        NO FOOD POPUP
+        ================================================== -->
+
+        <div
+            id="no-food-popup"
+            class="no-food-popup hidden"
+        >
+
+            <div class="no-food-panel">
+
+                <div class="no-food-message">
+                    Khó khăn quá iii hết món rùi 😡
+                </div>
+
+                <button
+                    id="no-food-back"
+                    class="no-food-back-button"
+                    type="button"
+                >
+                    Về lại
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <!-- FOOD DATA -->
+    <script src="data/foods.js"></script>
+
+    <!-- RANDOMIZER -->
+    <script src="js/randomizer.js"></script>
+
+    <!-- APP -->
+    <script src="js/app.js"></script>
+
+    <!-- FILTER -->
+    <script src="js/filter.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+/* ================================
+   APP CONTAINER
+================================ */
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+
+    background: #ffffff;
+}
+
+
+/* ================================
+   MOBILE SCREEN
+================================ */
+
+.screen {
+    width: var(--screen-width);
+    min-height: var(--screen-height);
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #f79fab;
+}
+
+
+/* ================================
+   HIDDEN
+================================ */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ================================
+   SAFE AREA
+================================ */
+
+@supports (padding: env(safe-area-inset-top)) {
+
+    .screen {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+}

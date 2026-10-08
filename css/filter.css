@@ -1,0 +1,292 @@
+/* ================================
+   FILTER OVERLAY
+================================ */
+
+.filter-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.filter-overlay.hidden {
+    display: none;
+}
+
+
+/* ================================
+   FILTER PANEL
+================================ */
+
+.filter-panel {
+    width: var(--filter-panel-width);
+    height: var(--filter-panel-height);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 25px;
+
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-radius: var(--border-radius);
+}
+
+
+/* ================================
+   FILTER TITLE
+================================ */
+
+.filter-title {
+    font-size: var(--font-large);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+/* ================================
+   FILTER LIST
+================================ */
+
+.filter-list {
+    width: 100%;
+    margin-top: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+/* ================================
+   FILTER ITEM
+================================ */
+
+.filter-item {
+    position: relative;
+
+    width: var(--filter-button-width);
+}
+
+
+/* ================================
+   FILTER BUTTON
+================================ */
+
+.filter-select-button {
+    width: 100%;
+    height: var(--filter-button-height);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 14px;
+
+    border: 2px solid #000000;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    font-size: var(--filter-text-size);
+    cursor: pointer;
+}
+
+
+/* ================================
+   DROPDOWN
+================================ */
+
+.filter-dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+
+    z-index: 110;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid #000000;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+.filter-dropdown.hidden {
+    display: none;
+}
+
+
+/* ================================
+   DROPDOWN OPTION
+================================ */
+
+.filter-option {
+    width: 100%;
+    min-height: 40px;
+
+    border: none;
+    border-bottom: 1px solid #dddddd;
+
+    background: #ffffff;
+
+    font-size: var(--filter-text-size);
+
+    cursor: pointer;
+}
+
+.filter-option:last-child {
+    border-bottom: none;
+}
+
+.filter-option:hover {
+    background: #eeeeee;
+}
+
+
+/* ================================
+   OK BUTTON
+================================ */
+
+.filter-ok-button {
+    width: var(--filter-button-width);
+    height: var(--filter-button-height);
+
+    margin-top: auto;
+    margin-bottom: 25px;
+
+    border: 2px solid #000000;
+    border-radius: 12px;
+
+    background: #d84559;
+    color: #ffffff;
+
+    font-size: var(--filter-ok-text-size);
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.filter-ok-button:hover {
+    transform: scale(1.03);
+}
+
+.filter-ok-button:active {
+    transform: scale(0.97);
+}
+
+/* ================================
+   FILTER DROPDOWN FOCUS
+================================ */
+
+.filter-panel:has(.filter-dropdown:not(.hidden)) .filter-title,
+.filter-panel:has(.filter-dropdown:not(.hidden)) .filter-ok-button,
+.filter-panel:has(.filter-dropdown:not(.hidden)) .filter-item {
+    transition: opacity 0.2s ease;
+}
+
+/* Làm mờ các phần không được chọn */
+.filter-panel:has(.filter-dropdown:not(.hidden)) .filter-title,
+.filter-panel:has(.filter-dropdown:not(.hidden)) .filter-ok-button,
+.filter-panel:has(.filter-dropdown:not(.hidden)) .filter-item:not(:has(.filter-dropdown:not(.hidden))) {
+    opacity: 0.35;
+}
+
+/* Filter đang mở luôn rõ */
+.filter-panel:has(.filter-dropdown:not(.hidden))
+    .filter-item:has(.filter-dropdown:not(.hidden)) {
+    opacity: 1;
+}
+
+/* ================================
+   FILTER ICON
+================================ */
+
+.filter-select-button {
+    position: relative;
+    padding-right: 42px;
+}
+
+
+/* ================================
+   ICON MẶC ĐỊNH
+================================ */
+
+.filter-select-button::after {
+    content: "▾";
+
+    position: absolute;
+    right: 20px;
+    top: 50%;
+
+    transform: translateY(-55%);
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #000000;
+
+    pointer-events: none;
+}
+
+
+/* ================================
+   FILTER ĐANG MỞ
+================================ */
+
+.filter-select-button.filter-open::after {
+    content: "▴";
+    right: 18px;
+
+    transform: translateY(-55%);
+
+    animation: filterArrowSpin 0.5s ease;
+}
+
+
+/* ================================
+   HIỆU ỨNG XOAY 540°
+================================ */
+
+@keyframes filterArrowSpin {
+
+    from {
+        transform: translateY(-55%) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(-55%) rotate(360deg);
+    }
+
+}
+
+
+/* ================================
+   FILTER ĐÃ CHỌN
+================================ */
+
+.filter-select-button.filter-selected::after {
+    content: "✓";
+
+    right: 20px;
+    top: 50%;
+
+    transform: translateY(-55%);
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #22a447;
+}

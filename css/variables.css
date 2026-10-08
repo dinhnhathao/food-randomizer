@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* ================================
+       IPHONE 17 PRO MAX
+    ================================= */
+
+    --screen-width: 402px;
+    --screen-height: 874px;
+    --bg1-offset-x: -95px;
+
+
+    /* ================================
+       RESULT CARD
+    ================================= */
+
+    --result-card-width: 330px;
+    --result-card-height: 240px;
+
+
+    /* ================================
+       FOOD IMAGE
+    ================================= */
+
+    --food-image-width: 280px;
+    --food-image-height: 160px;
+
+
+    /* ================================
+       MAIN BUTTONS
+    ================================= */
+
+    --main-button-width: 250px;
+    --main-button-height: 72px;
+
+
+    /* ================================
+       FONT
+    ================================= */
+
+    --font-large: 36px;
+    --font-small: 16px;
+    --food-name-size: 24px;
+
+
+    /* ================================
+       FILTER
+    ================================= */
+
+    --filter-panel-width: 290px;
+    --filter-panel-height: 660px;
+
+    --filter-button-width: 165px;
+    --filter-button-height: 49px;
+
+    --filter-text-size: 16px;
+    --filter-ok-text-size: 32px;
+
+
+    /* ================================
+       POPUP
+    ================================= */
+
+    --popup-width: 280px;
+    --popup-height: 195px;
+
+
+    /* ================================
+       GENERAL
+    ================================= */
+
+    --border-radius: 16px;
+    --transition-fast: 0.2s ease;
+}

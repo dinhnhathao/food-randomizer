@@ -1,0 +1,273 @@
+/* ==================================================
+   RESULT SCREEN
+   Giao diện 1.1
+================================================== */
+
+
+/* ==================================================
+   RESULT / HEADER
+================================================== */
+
+.result-header {
+    width: 100%;
+    height: 128px;
+
+    display: flex;
+    justify-content: center;
+
+    padding-top: 80px;
+}
+
+
+/* ==============================
+   RESULT TITLE
+============================== */
+
+.result-title {
+    font-size: var(--font-large);
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   RESULT / FOOD CARD
+================================================== */
+
+.result-food-card {
+
+    width: var(--result-card-width);
+    height: var(--result-card-height);
+
+    margin: 60px auto 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 2px solid #000000;
+    border-radius: var(--border-radius);
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   FOOD IMAGE CONTAINER
+================================================== */
+
+.result-food-image-container {
+
+    width: var(--food-image-width);
+    height: var(--food-image-height);
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #eeeeee;
+}
+
+
+/* ==================================================
+   FOOD IMAGE
+================================================== */
+
+.result-food-image {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ==================================================
+   FOOD NAME CONTAINER
+================================================== */
+
+.result-food-name-container {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ==================================================
+   FOOD NAME
+================================================== */
+
+.result-food-name {
+
+    font-size: var(--food-name-size);
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   RESULT / ACTIONS
+================================================== */
+
+.result-actions {
+
+    width: 100%;
+
+    margin-top: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+
+/* ==================================================
+   RESULT BUTTON
+================================================== */
+
+.result-button {
+    flex-shrink: 0;
+}
+
+/* ================================
+   NO FOOD POPUP
+================================ */
+
+.no-food-popup {
+    position: fixed;
+    inset: 0;
+
+    z-index: 200;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.no-food-popup.hidden {
+    display: none;
+}
+
+
+/* ================================
+   NO FOOD PANEL
+================================ */
+
+.no-food-panel {
+    width: 260px;
+    height: 182px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    background: #ffffff;
+
+    border: 2px solid #000000;
+    border-radius: var(--border-radius);
+}
+
+
+/* ================================
+   MESSAGE
+================================ */
+
+.no-food-message {
+    font-size: 24px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* ================================
+   BACK BUTTON
+================================ */
+
+.no-food-back-button {
+    width: 150px;
+    height: 47px;
+
+    border: 2px solid #000000;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.no-food-back-button:hover {
+    transform: scale(1.03);
+}
+
+.no-food-back-button:active {
+    transform: scale(0.97);
+}
+
+/* ==================================================
+   RESULT / BACKGROUND IMAGE
+================================================== */
+
+.result-background-image {
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.result-background-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==================================================
+   RESULT / FOOD IMAGE REVEAL
+================================================== */
+
+.result-food-image.reveal-from-center {
+    animation: foodImageReveal 1s ease-out forwards;
+}
+
+@keyframes foodImageReveal {
+    from {
+        opacity: 0;
+        clip-path: circle(0% at 50% 50%);
+        filter: brightness(1.8);
+    }
+
+    to {
+        opacity: 1;
+        clip-path: circle(75% at 50% 50%);
+        filter: brightness(1);
+    }
+}

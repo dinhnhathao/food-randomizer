@@ -1,0 +1,43 @@
+/* ==================================================
+   RESET CSS
+   Xóa các style mặc định của trình duyệt
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Loại bỏ khoảng trắng mặc định của body */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+/* Button kế thừa font của website */
+
+button {
+    font: inherit;
+}
+
+
+/* Ảnh không bị tràn khỏi container */
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+}
